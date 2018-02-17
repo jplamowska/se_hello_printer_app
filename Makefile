@@ -1,6 +1,7 @@
 .PHONY: test
 
 SERVICE_NAME=hello-world-printer
+MY_DOCKER_NAME=$(SERVICE_NAME)
 
 deps:
 	pip install -r requirements.txt; \
