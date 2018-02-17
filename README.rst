@@ -52,7 +52,7 @@ Pomocnicze
 
   ::
 
-    yum install python-pip
+    yum install -y python-pip
     pip install -U pip
     pip install virtualenv
     pip install virtualenvwrapper
