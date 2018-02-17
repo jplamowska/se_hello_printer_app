@@ -15,4 +15,4 @@ services:
 deploy:
   provider: heroku
   app: sheltered-atoll-12700
-  api_key: $(HEROKU_API_KEY)
+  api_key: ${HEROKU_API_KEY}
