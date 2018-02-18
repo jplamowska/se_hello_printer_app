@@ -51,8 +51,10 @@ Dodawanie testu
     :target: https://www.statuscake.com
 
 Monitoring z TravisCI:
+
 .. image:: https://travis-ci.org/jplamowska/se_hello_printer_app.svg?branch=master
     :target: https://travis-ci.org/jplamowska/se_hello_printer_app
+
 Pomocnicze
 ==========
 
