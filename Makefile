@@ -18,6 +18,12 @@ test_smoke:
 run:
 	python main.py
 
+test_cov:
+	PYTHONPATH=. py.test --verbose -s --cov=.
+
+test_xunit:
+	PYTHONPATH=. py.test -s --cov=.  --junit-xml=test_results.xml
+
 docker_build:
 	docker build -t $(SERVICE_NAME) .
 
