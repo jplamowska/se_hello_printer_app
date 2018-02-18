@@ -4,11 +4,15 @@ python:
 install:
   - make deps
 script:
+  - make lint
   - make test
+
 
 after_success:
   - sudo make docker_build
   - sudo make docker_push
+
+
 
 services:
   - docker
