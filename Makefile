@@ -12,8 +12,10 @@ lint:
 
 test:
 	PYTHONPATH=. py.test
+	
 test_smoke:
 	curl -I --fail 127.0.0.1:5000
+
 test_api:
 	python test-api/check_api.py
 
