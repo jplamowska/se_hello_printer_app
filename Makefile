@@ -15,6 +15,9 @@ test:
 test_smoke:
 	curl -I --fail 127.0.0.1:5000
 
+test_api:
+	PYTHONPATH=test_api.py.test
+
 run:
 	python main.py
 
