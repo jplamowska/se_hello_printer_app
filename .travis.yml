@@ -6,14 +6,14 @@ install:
 script:
   - make lint
   - make test
-  - sudo make docker_build
+  - make docker_build
   - make docker run
   - sleep 3; make test_api
 
 
 after_success:
 
-  - sudo make docker_push
+  - make docker_push
 
 
 
