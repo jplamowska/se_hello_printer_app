@@ -2,6 +2,7 @@ from hello_world import app
 from formater import get_formatted
 from formater import SUPPORTED, PLAIN
 from flask import request
+from flask import url_for, redirect
 
 moje_imie = "Justyna"
 msg = "Hello World!"
@@ -19,3 +20,9 @@ def index():
 @app.route('/outputs')
 def supported_output():
     return ", ".join(SUPPORTED)
+
+
+
+@app.route('/ui')
+def home():
+    return redirect(url_for('static', filename='index.html'))
