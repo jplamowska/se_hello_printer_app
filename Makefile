@@ -1,4 +1,4 @@
-.PHONY: test
+.PHONY: test test-ui test-api
 
 SERVICE_NAME=hello-world-printer
 MY_DOCKER_NAME=$(SERVICE_NAME)
@@ -11,23 +11,25 @@ lint:
 	flake8 hello_world test
 
 test:
-	PYTHONPATH=. py.test
-	
+	PYTHONPATH=. py.test --ignore=test_ui
+
 test_smoke:
 	curl -I --fail 127.0.0.1:5000
 
 test_api:
 	python test-api/check_api.py
 
+test_ui:
+	py.test test-ui/test_ui.py
 
 run:
 	python main.py
 
 test_cov:
-	PYTHONPATH=. py.test --verbose -s --cov=.
+	PYTHONPATH=. py.test --verbose -s --cov=. --ignore=test_ui
 
 test_xunit:
-	PYTHONPATH=. py.test -s --cov=.  --junit-xml=test_results.xml
+	PYTHONPATH=. py.test -s --cov=.  --junit-xml=test_results.xml --ignore=test_ui
 
 docker_build:
 	docker build -t $(SERVICE_NAME) .
