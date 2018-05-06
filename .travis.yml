@@ -1,4 +1,6 @@
 language: python
+services:
+  - docker
 python:
   - "2.7"
 install:
@@ -7,7 +9,7 @@ script:
   - make lint
   - make test
   - make docker_build
-  - make docker run
+  - make docker_run
   - sleep 3; make test_api
 
 
@@ -17,8 +19,7 @@ after_success:
 
 
 
-services:
-  - docker
+
 deploy:
   provider: heroku
   app: sheltered-atoll-12700
