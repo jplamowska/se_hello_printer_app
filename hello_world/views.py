@@ -22,7 +22,6 @@ def supported_output():
     return ", ".join(SUPPORTED)
 
 
-
 @app.route('/ui')
 def home():
     return redirect(url_for('static', filename='index.html'))
